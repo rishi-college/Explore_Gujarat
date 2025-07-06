@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Explorer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-blue-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-globe text-2xl text-teal-600"></i>
+                    <span class="font-bold text-xl text-gray-800">Travel Explorer</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-800 hover:text-teal-600 flex items-center">
+                        <i class="fas fa-home mr-2"></i> Home
+                    </a>
+                    <a href="#places" class="text-gray-800 hover:text-teal-600 flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Places
+                    </a>
+                    <a href="#gallery" class="text-gray-800 hover:text-teal-600 flex items-center">
+                        <i class="fas fa-images mr-2"></i> Gallery
+                    </a>
+                    <a href="#contact" class="text-gray-800 hover:text-teal-600 flex items-center">
+                        <i class="fas fa-envelope mr-2"></i> Contact
+                    </a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#home" class="block py-2 text-gray-800 hover:text-teal-600">
+                    <i class="fas fa-home mr-2"></i> Home
+                </a>
+                <a href="#places" class="block py-2 text-gray-800 hover:text-teal-600">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Places
+                </a>
+                <a href="#gallery" class="block py-2 text-gray-800 hover:text-teal-600">
+                    <i class="fas fa-images mr-2"></i> Gallery
+                </a>
+                <a href="#contact" class="block py-2 text-gray-800 hover:text-teal-600">
+                    <i class="fas fa-envelope mr-2"></i> Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative h-screen bg-cover bg-center" style="background-image: url('./images/GIrnar.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Gorgeous Gujrat</h1>
+            <p class="text-xl md:text-2xl text-white mb-8">Where nature leads and stories follow</p>
+            <a href="#places" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                <i class="fas fa-compass mr-2"></i> Explore Now
+            </a>
+        </div>
+    </section>
+
+    <!-- API -->
+    <section id="places" class="py-12 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+                <i class="fas fa-map-marked-alt text-teal-600 mr-2"></i> Popular Destinations
+            </h2>
+            
+            <div id="places-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Loading spinner -->
+                <div class="col-span-3 text-center py-12">
+                    <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-600"></div>
+                    <p class="mt-4 text-gray-700">Loading destinations...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="gallery" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+                <i class="fas fa-camera-retro text-teal-600 mr-2"></i> Travel Gallery
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <img src="./images/forest.jpg" alt="Mountain view" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+                <img src="./images/kutch.jpg" alt="Beach" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+                <img src="./images/gir.png" alt="Lake" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+                <img src="./images/Smritivan.jpeg" alt="Forest" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+                <i class="fas fa-video text-teal-600 mr-2"></i> Our Travel Video
+            </h2>
+            
+            <div class="max-w-4xl mx-auto bg-black rounded-lg overflow-hidden shadow-xl">
+                <video controls class="w-full">
+                    <source src="./videos/gujratt.mp4" type="video/mp4">
+                    <track src="./subtitles.vtt" kind="subtitles" srclang="en" label="English">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+                <i class="fas fa-music text-teal-600 mr-2"></i> Background Music
+            </h2>
+            
+            <div class="max-w-md mx-auto bg-gray-100 p-6 rounded-lg shadow-md">
+                <audio controls class="w-full">
+                    <source src="./audio/bg-audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-12 bg-gray-800 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">
+                <i class="fas fa-paper-plane text-teal-400 mr-2"></i> Contact Us
+            </h2>
+            
+            <form class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <label class="block text-gray-300 mb-2">Your Name</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:border-teal-400">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-300 mb-2">Your Email</label>
+                    <input type="email" class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:border-teal-400">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-300 mb-2">Your Message</label>
+                    <textarea rows="4" class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:border-teal-400"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <!-- Custom SVG -->
+            <svg class="w-16 h-16 mx-auto mb-4 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            
+            <p class="mb-4">© 2023 Travel Explorer. All rights reserved.</p>
+            
+        </div>
+    </footer>
+
+    <script>
+       
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    fetch('https://jsonplaceholder.typicode.com/posts?_limit=3')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('places-container');
+            container.innerHTML = '';
+            
+            
+            const gujaratSpots = [
+                {
+                    image: "https://www.gujarattourism.com/content/dam/gujrattourism/images/home_page/opti/SOU-Banner.jpg",
+                    name: "Statue of Unity",
+                    desc: "World's tallest statue honoring Sardar Patel with museum and valley views."
+                },
+                {
+                    image: "https://www.gujarattourism.com/content/dam/gujrattourism/images/weekend-get-aways/great-rann-of-kutch/Great-Rann-Of-Kutch-Banner.jpg",
+                    name: "Rann of Kutch",
+                    desc: "Vast white salt desert famous for its full moon festivals and crafts."
+                },
+                {
+                    image: "https://www.gujarattourism.com/content/dam/gujrattourism/images/flora--fauna/gir-national-park/Sasan-Gir-Banner.png",
+                    name: "Gir National Park",
+                    desc: "Only natural habitat of the majestic Asiatic lions in India."
+                }
+            ];
+            
+            data.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300';
+                card.innerHTML = `
+                    <img src="${gujaratSpots[index].image}" 
+                         alt="${gujaratSpots[index].name}" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">${gujaratSpots[index].name}</h3>
+                        <p class="text-gray-600">${gujaratSpots[index].desc}</p>
+                        <button class="mt-4 text-teal-600 font-semibold hover:text-teal-800">
+                            Explore <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('places-container').innerHTML = `
+                <div class="col-span-3 text-center py-12 text-red-600">
+                    <i class="fas fa-exclamation-triangle text-3xl mb-4"></i>
+                    <p>Failed to load destinations. Showing sample Gujarat attractions...</p>
+                    <!-- You can add the static Gujarat cards here as fallback -->
+                </div>
+            `;
+        });
+});
+    </script>
+</body>
+</html>
